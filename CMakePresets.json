@@ -1,0 +1,70 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 14,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "dev",
+      "description": "Base preset for library developers",
+      "hidden": true,
+      "cacheVariables": {
+
+      }
+    },
+    {
+      "name": "dev-win",
+      "description": "Windows preset for library developers",
+      "hidden": true,
+      "inherits": ["dev"],
+      "cacheVariables": {
+        "CMAKE_CXX_FLAGS": "/EHs"
+      }
+    },
+    {
+      "name": "dev-win-debug",
+      "description": "Windows preset for library developers",
+      "binaryDir": "${sourceDir}/build",
+      "hidden": false,
+      "inherits": ["dev-win"],
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "dev-win-release",
+      "description": "Windows preset for library developers",
+      "binaryDir": "${sourceDir}/build-release",
+      "hidden": false,
+      "inherits": ["dev-win"],
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name": "dev-linux",
+      "description": "Linux preset for library developers",
+      "hidden": true,
+      "inherits": ["dev"],
+      "cacheVariables": {
+        "CMAKE_CXX_FLAGS": "-Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wsign-conversion -Wcast-align -Wcast-qual -Wnull-dereference -Woverloaded-virtual -Wformat=2 -Werror"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "build-dev-win-release",
+      "configurePreset": "dev-win-release",
+      "jobs": 6,
+      "hidden": false
+    },
+    {
+      "name": "build-dev-win-debug",
+      "configurePreset": "dev-win-debug",
+      "jobs": 6,
+      "hidden": false
+    }
+  ]
+}

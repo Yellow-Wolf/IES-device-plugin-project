@@ -1,0 +1,21 @@
+#ifndef TEST_PROJECT_WITH_MODULE_ARCH_DEVICEPLUGINS_TESTDEVICEPLUGIN_CREATIONPART_CREATIONPARTFACTORY_IMPL1_TESTPLUGINCREATIONPARTFACTORYIMPL1_H_
+#define TEST_PROJECT_WITH_MODULE_ARCH_DEVICEPLUGINS_TESTDEVICEPLUGIN_CREATIONPART_CREATIONPARTFACTORY_IMPL1_TESTPLUGINCREATIONPARTFACTORYIMPL1_H_
+
+#include <plugin/deviceplugins/abstracts/creationpart/creationpartfactory.h>
+
+#include "deviceplugin/creationpart/controller/factorycontroller.h"
+
+class DevicePluginCreationPartFactoryImpl1: public QObject, public CreationPartFactory {
+  Q_OBJECT
+  Q_PLUGIN_METADATA(IID DevicePluginInterface_iid)
+  Q_INTERFACES(CreationPartFactory)
+ public:
+  explicit DevicePluginCreationPartFactoryImpl1(QObject *parent = nullptr);
+
+  CreationPartFactoryResponse createCreationPart(CreationPartFactoryRequest request) override;
+
+ private:
+  std::vector<std::shared_ptr<FactoryController>> _factory_controllers;
+};
+
+#endif //TEST_PROJECT_WITH_MODULE_ARCH_DEVICEPLUGINS_TESTDEVICEPLUGIN_CREATIONPART_CREATIONPARTFACTORY_IMPL1_TESTPLUGINCREATIONPARTFACTORYIMPL1_H_
