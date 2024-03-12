@@ -210,3 +210,13 @@ std::shared_ptr<SetChannelStartModeUseCase> UseCaseFactory::createSetChannelStar
 
   return _set_channel_start_mode_use_case;
 }
+
+std::shared_ptr<GetInnerStartPeriodUseCase> UseCaseFactory::createGetInnerStartPeriodUseCase() {
+    std::shared_ptr<GetInnerStartPeriodUseCase> result = nullptr;
+
+    if (_get_inner_start_period_use_case == nullptr) {
+        _get_inner_start_period_use_case = std::make_shared<GetInnerStartPeriodUseCase>(_device_entity);
+    }
+
+    return _get_inner_start_period_use_case;
+}

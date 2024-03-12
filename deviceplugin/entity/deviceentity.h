@@ -33,6 +33,8 @@ class DeviceEntityState {
   virtual SetChannelStartSourceResponse setChannelStartSource(SetChannelStartSourceRequest request) = 0;
   virtual SetChannelStartModeResponse setChannelStartMode(SetChannelStartModeRequest request) = 0;
 
+  virtual GetInnerStartPeriodResponse getInnerStartPeriod(GetInnerStartPeriodRequest request) = 0;
+
   virtual int getChannelCount() = 0;
 
   /**

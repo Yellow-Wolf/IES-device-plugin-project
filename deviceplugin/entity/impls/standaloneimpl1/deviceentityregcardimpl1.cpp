@@ -533,3 +533,26 @@ ErrorCode DeviceEntityRegCardImpl1::loadDeviceDTO(const std::shared_ptr<DeviceEn
 std::shared_ptr<DeviceEntityDTO> DeviceEntityRegCardImpl1::updateDeviceDTO() {
   return DeviceEntityState::updateDeviceDTO();
 }
+
+GetInnerStartPeriodResponse DeviceEntityRegCardImpl1::getInnerStartPeriod(GetInnerStartPeriodRequest request) {
+    GetInnerStartPeriodResponse response;
+
+    if (_modbus_wrapper != nullptr) {
+        std::vector<uint16_t> reg_values(2);
+        auto error_code = _modbus_wrapper->readHoldingRegisters(2, 2, reg_values);
+
+        if (error_code == SUCCESS) {
+            uint32_t value_in_disc = 0;
+            modbus::fromMsbLsb(reg_values[0], reg_values[1], value_in_disc);
+
+            uint64_t period = (uint64_t) value_in_disc * 25 + 100;
+            response.result = period;
+        } else {
+            // TODO: Потом сделать обработку ошибок.
+        }
+
+        response.error_code = error_code;
+    }
+
+    return response;
+}

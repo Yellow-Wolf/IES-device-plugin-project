@@ -244,3 +244,13 @@ std::shared_ptr<DeviceEntityDTO> DeviceEntityConnectedStateStandaloneImpl1::upda
   // TODO: Дописать процесс формирования DTO
   return DeviceEntityState::updateDeviceDTO();
 }
+
+GetInnerStartPeriodResponse DeviceEntityConnectedStateStandaloneImpl1::getInnerStartPeriod(GetInnerStartPeriodRequest request) {
+    GetInnerStartPeriodResponse response;
+
+    if (_reg_card != nullptr) {
+        response = _reg_card->getInnerStartPeriod(request);
+    }
+
+    return response;
+}

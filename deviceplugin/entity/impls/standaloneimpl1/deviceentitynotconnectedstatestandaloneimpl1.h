@@ -7,7 +7,7 @@
 class DeviceEntityNotConnectedStateStandaloneImpl1: public DeviceEntityState {
  public:
   GetSyncModuleStatusesResponse getSyncModuleStatuses(GetSyncModuleStatusesRequest request) override;
-
+  GetInnerStartPeriodResponse getInnerStartPeriod(GetInnerStartPeriodRequest request) override;
   GetSFPParametersResponse getSFPParameters(GetSFPParametersRequest request) override;
 
   int getChannelCount() override;

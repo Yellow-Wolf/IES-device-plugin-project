@@ -13,7 +13,7 @@ class IDeviceEntityPoll: public QObject, public IProcessable {
 
   virtual void SyncModuleStatusesPoll() = 0;
   virtual void SyncSFPStatusesPoll() = 0;
-
+  virtual void innerStartPeriodPoll() = 0;
   virtual void channelNamesPoll() = 0;
   virtual void channelDelaysPoll() = 0;
   virtual void channelWidthsPoll() = 0;

@@ -72,3 +72,7 @@ ErrorCode DeviceEntityNotConnectedStateStandaloneImpl1::loadDeviceDTO(const std:
 std::shared_ptr<DeviceEntityDTO> DeviceEntityNotConnectedStateStandaloneImpl1::updateDeviceDTO() {
   return DeviceEntityState::updateDeviceDTO();
 }
+
+GetInnerStartPeriodResponse DeviceEntityNotConnectedStateStandaloneImpl1::getInnerStartPeriod(GetInnerStartPeriodRequest request) {
+  return GetInnerStartPeriodResponse();
+}

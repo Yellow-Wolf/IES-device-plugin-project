@@ -39,7 +39,7 @@ class DeviceEntityRegCardImpl1: public DeviceEntityRegCard {
   SetChannelInvertedStatusResponse setChannelInvertedStatus(SetChannelInvertedStatusRequest request) override;
   SetChannelStartSourceResponse setChannelStartSource(SetChannelStartSourceRequest request) override;
   SetChannelStartModeResponse setChannelStartMode(SetChannelStartModeRequest request) override;
-
+  GetInnerStartPeriodResponse getInnerStartPeriod(GetInnerStartPeriodRequest request) override;
   int getChannelCount() override;
 
   void updateRegCard() override;

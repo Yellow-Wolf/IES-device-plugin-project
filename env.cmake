@@ -1,5 +1,5 @@
-set(CMAKE_PREFIX_PATH "c:/Qt/Qt5.12.9-new/5.12.9/msvc2017_64/lib/cmake" CACHE INTERNAL "" FORCE)
-set (BOOST_ROOT "c:/Users/User/Documents/Soft/boost_1_84_0/boost_1_84_0/")
+set(CMAKE_PREFIX_PATH "E:/msvc2017_64/lib/cmake" CACHE INTERNAL "" FORCE)
+set (BOOST_ROOT "C:/local/boost_1_82_0")
 set (Boost_NO_SYSTEM_PATHS ON)
 set (Boost_USE_MULTITHREADED ON)
 set (Boost_USE_STATIC_LIBS ON)

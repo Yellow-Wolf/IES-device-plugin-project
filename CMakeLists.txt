@@ -101,7 +101,7 @@ file(GLOB TEST_DEVICE_SRC
         "${CMAKE_SOURCE_DIR}/test/*.cpp"
         )
 
-add_library(${PLUGIN_NAME} SHARED ${TEST_DEVICE_SRC})
+add_library(${PLUGIN_NAME} SHARED ${TEST_DEVICE_SRC} deviceplugin/managementpart/usecase/innerstart/getinnerstartperiodusecase.cpp deviceplugin/managementpart/usecase/innerstart/getinnerstartperiodusecase.h)
 target_link_libraries(${PLUGIN_NAME}
         Qt5::Widgets
         utils::utils

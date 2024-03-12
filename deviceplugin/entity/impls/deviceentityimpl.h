@@ -29,6 +29,7 @@ class DeviceEntityImpl: public DeviceEntity {
   void changeState(DeviceState state);
 
   void process() override;
+  GetInnerStartPeriodResponse getInnerStartPeriod(GetInnerStartPeriodRequest request) override;
 
   GetSyncModuleStatusesResponse getSyncModuleStatuses(GetSyncModuleStatusesRequest request) override;
   GetSFPParametersResponse getSFPParameters(GetSFPParametersRequest request) override;
@@ -65,5 +66,6 @@ class DeviceEntityImpl: public DeviceEntity {
   DeviceState _current_state_key = NOT_CONNECTED;
   std::shared_ptr<DeviceEntityRegCard> _reg_card = nullptr;
 };
+
 
 #endif //CPSDEVICESTANDALONEPLUGIN_DEVICEPLUGIN_ENTITY_IMPLS_STANDALONEIMPL1_DEVICEENTITYIMPL_H_
